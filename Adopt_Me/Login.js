@@ -45,7 +45,7 @@ class LoginForm extends Component{
 				<Button
           title="Login"
           //TODO post information
-          onPress={() => navigate('DogSignUp', {user: this._form.getValue()})}
+          onPress={() => navigate('Matches')}
         />
 			</View>
 		);

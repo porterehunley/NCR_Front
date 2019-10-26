@@ -2,6 +2,7 @@ import React from 'react';
 import SignUpForm from './From';
 import DogSignUpForm from './DogForm'
 import LoginForm from './Login';
+import Profile from './Profile';
 import { StyleSheet, View } from 'react-native';
 
 import {createAppContainer} from 'react-navigation';
@@ -10,7 +11,8 @@ import {createStackNavigator} from 'react-navigation-stack';
 const MainNavigator = createStackNavigator({
   SignUp: {screen: SignUpForm},
   DogSignUp: {screen: DogSignUpForm},
-  Login: {screen: LoginForm}
+  Login: {screen: LoginForm},
+  Matches: {screen: Profile}
 });
 
 const App = createAppContainer(MainNavigator);

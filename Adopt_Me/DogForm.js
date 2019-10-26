@@ -14,6 +14,7 @@ const Dog = t.struct({
   breed: t.String,
   weight: t.String,
   sex: t.String,
+  bio: t.String
 });
 
 const style = StyleSheet.create({
@@ -75,6 +76,7 @@ class DogSignUpForm extends Component{
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
+      base64: true,
       aspect: [4, 3],
     });
 

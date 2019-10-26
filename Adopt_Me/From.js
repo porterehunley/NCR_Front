@@ -43,7 +43,7 @@ class SignUpForm extends Component{
 			<View style={style.container}>
 				<Button
           title="Login"
-          onPress={() => navigate('DogSignUp', {user: this._form.getValue()})}
+          onPress={() => navigate('Login')}
         />
 				<Form
 					style={style.form_style} 
