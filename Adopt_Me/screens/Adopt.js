@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Switch } from 'react-native';
 
 import SwipeCards from '../components/SwipeCards'
 
 export default class Adopt extends Component {
+  state = {  
+    switchValue: false  
+};  
  render() {
    return (
      <View style={styles.container}>
-       <Text>AdoptMe - Home screen</Text>
+       <View style={{paddingTop: 20}}>  
+        <Switch  
+          value={this.state.switchValue}  
+          onValueChange ={(switchValue) => this.setState({switchValue})}/>  
+       </View>
        <SwipeCards style={{flex: 1}} />
      </View>
    );
