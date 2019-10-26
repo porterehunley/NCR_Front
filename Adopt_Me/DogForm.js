@@ -5,11 +5,11 @@ import t from 'tcomb-form-native';
 
 const Form = t.form.Form;
 
-const User = t.struct({
+const Dog = t.struct({
 	name: t.String,
-  email: t.String,
-  username: t.String,
-  password: t.String,
+  breed: t.String,
+  weight: t.String,
+  sex: t.String,
 });
 
 const style = StyleSheet.create({
@@ -23,15 +23,9 @@ const style = StyleSheet.create({
   form_style: {
   	width: 70,
   }
-
 });
 
-// handleSubmit = () => {
-// 	const value = this._form.getValue();
-//   console.log('value: ', value);
-// }
-
-class SignUpForm extends Component{
+class DogSignUpForm extends Component{
 	static navigationOptions = {
     title: 'Sign Up Bitch',
   };
@@ -41,17 +35,15 @@ class SignUpForm extends Component{
 			<View style={style.container}>
 				<Form
 					style={style.form_style} 
-					type={User} 
+					type={Dog} 
 					ref={c => this._form = c}
 				/>
 				<Button
           title="Sign Up!"
-          onPress={() => navigate('DogSignUp', {user: User})}
         />
 			</View>
 		);
 	}
 }
 
-export default SignUpForm;
-
+export default DogSignUpForm;
