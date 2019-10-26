@@ -23,7 +23,7 @@ class SignUpForm extends Component{
 	render (){
 		return(
 			<View style={style.container}>
-				<Text> AHHHHHHHHHHHHH </Text>
+				<Form type={User} />
 			</View>
 		);
 	}
