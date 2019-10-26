@@ -1,10 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Adopt from './screens/Adopt';
+
 export default function App() {
-  return (
+  return (  
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Adopt />
     </View>
   );
 }
