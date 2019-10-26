@@ -6,10 +6,6 @@ import t from 'tcomb-form-native';
 const Form = t.form.Form;
 
 const User = t.struct({
-	fisrtname: t.String,
-	lastname: t.String,
-  state: t.String,
-  city: t.String,
   username: t.String,
   password: t.String,
 });
@@ -33,7 +29,7 @@ const style = StyleSheet.create({
 //   console.log('value: ', value);
 // }
 
-class SignUpForm extends Component{
+class LoginForm extends Component{
 	static navigationOptions = {
     title: 'Sign Up Bitch',
   };
@@ -41,17 +37,14 @@ class SignUpForm extends Component{
 		const {navigate} = this.props.navigation;
 		return(
 			<View style={style.container}>
-				<Button
-          title="Login"
-          onPress={() => navigate('DogSignUp', {user: this._form.getValue()})}
-        />
 				<Form
 					style={style.form_style} 
 					type={User} 
 					ref={c => this._form = c}
 				/>
 				<Button
-          title="Sign Up!"
+          title="Login"
+          //TODO post information
           onPress={() => navigate('DogSignUp', {user: this._form.getValue()})}
         />
 			</View>
@@ -59,5 +52,4 @@ class SignUpForm extends Component{
 	}
 }
 
-export default SignUpForm;
-
+export default LoginForm;

@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
-import ImagePicker from './Camera';
+import { StyleSheet, View, Text, Button, Image } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+import * as Permissions from 'expo-permissions';
+import Constants from 'expo-constants';
+
 
 import t from 'tcomb-form-native';
 
@@ -30,7 +33,12 @@ class DogSignUpForm extends Component{
 	static navigationOptions = {
     title: 'Sign Up Bitch',
   };
+  state = {
+    image: null,
+  };
+
 	render (){
+		let { image } = this.state;
 		const {navigate} = this.props.navigation;
 
 
@@ -42,12 +50,43 @@ class DogSignUpForm extends Component{
 					ref={c => this._form = c}
 				/>
 				<Button
-          title="Sign Up!"
-          onPress={() => navigate('CameraApp', {user: this._form.getValue()})}
+          title="Select Image"
+          onPress={this._pickImage}
         />
+        {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
 			</View>
 		);
 	}
+
+	componentDidMount() {
+    this.getPermissionAsync();
+  };
+
+  getPermissionAsync = async () => {
+    if (Constants.platform.ios) {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (status !== 'granted') {
+        alert('Sorry, we need camera roll permissions to make this work!');
+      }
+    }
+  }
+
+  _pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      this.setState({ image: result.uri });
+    }
+  };
 }
+
+
+
 
 export default DogSignUpForm;
