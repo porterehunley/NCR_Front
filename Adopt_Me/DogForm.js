@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
+import ImagePicker from './Camera';
 
 import t from 'tcomb-form-native';
 
@@ -31,6 +32,8 @@ class DogSignUpForm extends Component{
   };
 	render (){
 		const {navigate} = this.props.navigation;
+
+
 		return(
 			<View style={style.container}>
 				<Form
@@ -40,6 +43,7 @@ class DogSignUpForm extends Component{
 				/>
 				<Button
           title="Sign Up!"
+          onPress={() => navigate('CameraApp', {user: this._form.getValue()})}
         />
 			</View>
 		);
