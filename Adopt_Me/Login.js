@@ -32,7 +32,7 @@ const style = StyleSheet.create({
 
 class LoginForm extends Component{
 	static navigationOptions = {
-    title: 'Sign Up Bitch',
+    title: 'Login',
   };
 	render (){
 		const {navigate} = this.props.navigation;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Switch, Button } from 'react-native';
+import { StyleSheet, Text, View, Switch } from 'react-native';
+import { Button } from 'react-native-elements';
 
 import SwipeCards from '../components/SwipeCards'
 
@@ -12,7 +13,9 @@ export default class Adopt extends Component {
     return (
       <View style={styles.container}>
         <Button
-          title="See Matches"
+          title="Potential Pups"
+          type="outline"
+          backgroundColor="orange"
           onPress={() => navigate('Matches')}
         />
         <SwipeCards style={{flex: 1}} />
