@@ -80,27 +80,29 @@ export default class extends React.Component {
  
 const styles = StyleSheet.create({
   cardName: {
+    paddingTop: 15,
     paddingLeft: 15,
     textAlign: 'left',
     fontWeight: 'bold',
-    fontSize: 24
+    fontSize: 28
   },
   cardInfo: {
-    paddingLeft: 18,
+    paddingLeft: 15,
     textAlign: 'left',
-    fontSize: 16,
+    fontSize: 18,
     fontStyle: "italic",
   },
   cardBio: {
     paddingTop: 6,
-    paddingLeft: 18,
+    paddingLeft: 20,
+    paddingRight: 20,
     textAlign: 'left',
-    fontSize: 14
+    fontSize: 16
   },
   card: {
     textAlign: 'left',
     width: 330,
-    height: 560,
+    height: 520,
     borderRadius: 300/10
   },
   noMoreCardsText: {

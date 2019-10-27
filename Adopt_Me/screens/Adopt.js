@@ -15,11 +15,6 @@ export default class Adopt extends Component {
           title="See Matches"
           onPress={() => navigate('Matches')}
         />
-        <View style={{paddingTop: 20}}>  
-          <Switch  
-            value={this.state.switchValue}  
-            onValueChange ={(switchValue) => this.setState({switchValue})}/>  
-        </View>
         <SwipeCards style={{flex: 1}} />
       </View>
     );
